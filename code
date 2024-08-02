@@ -1,0 +1,107 @@
+2.  Write a program to find transpose of a matrix.
+
+package assignment;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Tranpose {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the rows and columns:");
+        int a= sc.nextInt(),b= sc.nextInt();
+        int mat[][]=new int[a][b];
+        System.out.println("Enter matrix element:");
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < b; j++) {
+                mat[i][j]=sc.nextInt();
+            }
+        }
+        int trans[][]=new int[b][a];
+        for(int i=0;i<a;i++){
+            for (int j = 0; j < b; j++) {
+                trans[j][i]=mat[i][j];
+            }
+        }
+        System.out.println("Transposed Matrix:");
+        for (int i = 0; i < b; i++) {
+            System.out.println(Arrays.toString(trans[i]));
+        }
+    }
+}
+
+
+
+
+
+1. Create a program that rotates the elements of an array to the right by a specified number of positions. Get the array and the rotation count from the user.
+
+
+package assignment;
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+public class ArrayRotate{
+ public static void reverse(int start,int end,int s[]){
+	    	        while(start<end){
+	    	            int t=s[start];
+	    	            s[start]=s[end];
+	    	            s[end]=t;
+	    	            start++;
+	    	            end--;
+	    	        }
+	    	    }
+	    	    public static void main(String[] args) {
+	    	        Scanner sc=new Scanner(System.in);
+	    	        System.out.println("Enter the length:");
+	    	        int n=sc.nextInt();
+	    	        System.out.println("Enter the elements");
+	    	        int t[]=new int[n];
+	    	        for (int i = 0; i < n; i++) {
+	    	            t[i]= sc.nextInt();
+	    	        }
+	    	        System.out.println("Enter the rotation count:");
+	    	        int k=sc.nextInt();
+	    	        k=k%n;
+	    	        reverse(0,n-1,t);
+	    	        reverse(0,k-1,t);
+	    	        reverse(k,n-1,t);
+	    	        System.out.println("The rotated array:"+ Arrays.toString(t));
+	    	    }
+	 
+	    
+	    
+	    }
+
+
+
+
+3.Write a program to generate the matrix with integers in spiral order. Get size N from the user and generate an NxN spiral matrix.
+
+
+package assignment;
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+public class SpiralMatrix{
+	
+
+	    public static void main(String[] args) {
+	        Scanner s=new Scanner(System.in);
+	        System.out.println("Enter S:");
+	        int t=s.nextInt();
+	        int matrix[][]=new int[t][t];
+	        int left=0,right=t,top=0,bottom=t;
+	        System.out.println("Enter the elements:");
+	        while (left<right && top<bottom){
+	            for (int i = left; i <right ; i++) {
+	                matrix[top][i]=s.nextInt();
+	            }
+	            top++;
+	        }
+	        
+	    }
+}
+	        
+	    
